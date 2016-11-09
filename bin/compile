@@ -404,6 +404,8 @@ case ${TOOL} in
         if test "$VendorExperiment" = "true"
         then
             massagePkgSpecForVendor
+            step "Running: godep restore"
+            godep restore
             step "Running: go install -v ${FLAGS[@]} ${pkgs}"
             go install -v "${FLAGS[@]}" ${pkgs} 2>&1
         else
