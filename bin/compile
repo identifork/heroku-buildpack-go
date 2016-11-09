@@ -407,6 +407,8 @@ case ${TOOL} in
             step "Running: go install -v ${FLAGS[@]} ${pkgs}"
             go install -v "${FLAGS[@]}" ${pkgs} 2>&1
         else
+            step "Running: godep restore"
+            godep restore
             step "Running: godep go install -v ${FLAGS[@]} ${pkgs}"
             godep go install -v "${FLAGS[@]}" ${pkgs} 2>&1
         fi
