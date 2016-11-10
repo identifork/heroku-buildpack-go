@@ -350,6 +350,7 @@ unset GIT_DIR # unset git dir or it will mess with goinstall
 cd "${src}"
 
 massagePkgSpecForVendor
+cd "${build}"
 step "Running: ./build.sh"
 ls -l
 bash build.sh
